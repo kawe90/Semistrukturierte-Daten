@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT vaccination-plan (vaccine-types, vaccines, patients)>
+
+<!ELEMENT vaccine-types (vaccine-VT*)>
+<!ELEMENT vaccine-VT ((name*,type*,authorized*)*)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT authorized (#PCDATA)>
+
+<!ELEMENT vaccines (vaccine*)>
+<!ELEMENT vaccine ((batch+,info*)+)>
+<!ATTLIST vaccine type_ref ID #REQUIRED>
+
+<!ELEMENT batch (#PCDATA)>
+<!ATTLIST batch id ID #REQUIRED>
+
+<!ELEMENT info (#PCDATA|size|order-date|delivery-date)*> 
+<!ATTLIST info date CDATA #REQUIRED>
+
+<!ELEMENT size (#PCDATA)>
+<!ELEMENT order-date (#PCDATA)>
+<!ELEMENT delivery-date (#PCDATA)>
+
+<!ELEMENT patients (patient*)>
+<!ELEMENT patient (risk-group*,(vaccine2,vaccination-date)+,residences)>
+<!ATTLIST patient name CDATA #REQUIRED
+	              birth_year CDATA #IMPLIED
+	              pid ID #REQUIRED >
+	              
+<!ELEMENT risk-group (high|medium|low)>	
+<!ELEMENT high (#PCDATA)>
+<!ELEMENT medium (#PCDATA)>
+<!ELEMENT low (#PCDATA)>
+	              
+<!ELEMENT vaccine2 EMPTY>
+<!ATTLIST vaccine2 ref_batch IDREF #REQUIRED>
+
+<!ELEMENT vaccination-date EMPTY>
+<!ATTLIST vaccination-date date CDATA #REQUIRED>
+
+<!ELEMENT residences ((second*,main,second*))>
+<!ELEMENT second (#PCDATA)>
+<!ELEMENT main (#PCDATA)>
