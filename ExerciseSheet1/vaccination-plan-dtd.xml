@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE vaccination-plan SYSTEM "vaccination-plan.dtd">
+<vaccination-plan>
+    <vaccine-types>
+        <vaccine-VT>
+            <name>Vacc1</name>
+            <type>Type1</type>
+            <authorized>true</authorized>
+        </vaccine-VT>
+        <vaccine-VT>
+            <type>Type2</type>
+            <name>Vacc2</name>
+            <authorized>1</authorized>
+        </vaccine-VT>
+        <vaccine-VT>
+            <authorized>0</authorized>
+            <name>Vacc3</name>
+            <type>Type3</type>
+        </vaccine-VT>
+        <vaccine-VT>
+            <name>Vacc4</name>
+            <type>Type4</type>
+            <authorized>false</authorized>
+        </vaccine-VT>
+    </vaccine-types>
+    <vaccines>
+        <vaccine type_ref="vac0001">
+            <batch id="batch000001"></batch>
+            <info date="2021-01-01">
+                An order of size<size>160</size> doses
+                has been placed on 
+                <order-date>2021-02-01</order-date> and one half will be arraving on 
+                <delivery-date>2021-02-26</delivery-date> and other half on <delivery-date>2021-03-26</delivery-date>
+            </info>
+        </vaccine>
+        <vaccine type_ref="vac0002">
+            <batch id="batch000002"></batch>
+            <info date="2021-01-03">
+                An order of size<size>260</size> doses
+                has been placed on <order-date>2021-03-01</order-date>and one half will be arraving on 
+                <delivery-date>2021-03-16</delivery-date> and other half on <delivery-date>2021-03-19</delivery-date>
+            </info>
+        </vaccine>
+        <vaccine type_ref="vac0003">
+            <batch id="batch000003"></batch>
+            <info date="2021-02-01">
+                An order of size<size>60</size> doses
+                has been placed on <order-date>2021-02-06</order-date> and one half will be arraving on 
+                <delivery-date>2021-02-16</delivery-date> and other half on <delivery-date>2021-03-16</delivery-date>
+            </info>
+        </vaccine>
+    </vaccines>
+    <patients>
+        <patient name="Name1" pid="P012345">
+            <risk-group>
+                <high>High</high>
+            </risk-group>
+            <vaccine2 ref_batch="batch000001"/>
+            <vaccination-date date=""/>
+            <residences>
+                <second>Adr</second><second>B</second><main>C</main><second>D</second>
+            </residences>
+        </patient>
+        <patient name="Name2" pid="P123456">
+            <risk-group>
+                <medium>Medium</medium>
+            </risk-group>
+            <vaccine2 ref_batch="batch000002"/>
+            <vaccination-date date=""/>
+            <residences>
+                <second></second><main></main>
+            </residences>
+        </patient>
+        <patient name="Name3" pid="P3456789">
+            <risk-group>
+                <low>Low</low>
+            </risk-group>
+            <vaccine2 ref_batch="batch000003"/>
+            <vaccination-date date=""/>
+            <residences>
+                <main></main><second></second>
+            </residences>
+        </patient>
+    </patients>
+</vaccination-plan>
