@@ -1,4 +1,4 @@
-# Semistrukturierte Daten (VU 2,0) 2021S
+# Semistrukturierte Daten (VU 2,0) 
 
 Solutions to the first exercise sheet
 
